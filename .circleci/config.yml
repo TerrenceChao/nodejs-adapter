@@ -11,6 +11,8 @@ jobs:
 
     working_directory: ~/repo
 
+    environment:
+          NODE_ENV: dev
 
     steps:
       - checkout
@@ -36,8 +38,6 @@ jobs:
       - run: pwd
       - run: echo 'export NODE_ENV="dev"' >> $BASH_ENV
       - run: sudo npm install
-          environment:
-            NODE_ENV: dev
 
       # - save_cache:
       #     paths:
@@ -48,7 +48,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.3
-
 
     steps:
       - checkout
