@@ -52,10 +52,15 @@ jobs:
       - run: |
           if [[ $(cat nodejs-adapter/logging) == "Trying Out Workspaces" ]]; then
             echo "It worked!";
-            cat logging;
           else
             echo "Nope!"; exit 1
           fi
+      - run:
+          name: Run Env Variables
+          command: |
+            echo ${FIRST_VAR} && 
+            echo ${SECOND_VAR} && 
+            echo ${THIRD_VAR}
       # - run: pwd
       # - run: ls -l
       # - run:
