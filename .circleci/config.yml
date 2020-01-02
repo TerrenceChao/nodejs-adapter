@@ -14,6 +14,13 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+      - run: mkdir -p nodejs-adapter
+      - run: echo "Trying Out Workspaces" > nodejs-adapter/logging
+      - persist_to_workspace:
+        root: nodejs-adapter
+        paths:
+          - logging
+      - run: tree ~/repo
       # # Download and cache dependencies
       # - restore_cache:
       #     keys:
@@ -37,6 +44,14 @@ jobs:
     steps:
       - checkout
       - run: echo "A second hello"
+      - attach_workspace:
+        at: nodejs-adapter
+      - run: |
+        if [[ $(cat nodejs-adapter/logging) == "Trying Out Workspaces" ]]; then
+          echo "It worked!";
+        else
+          echo "Nope!"; exit 1
+        fi
       # - run: pwd
       # - run: ls -l
       # - run:
