@@ -43,9 +43,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
   test:
-    docker:
+    machine:
       # specify the version you desire here
-      - image: circleci/node:10.16.3
+      node: 
+        version: 10.16.3
+    override:
+      - ./node_modules/.bin/mocha
     steps:
       - checkout
       - run: echo "A second hello"
