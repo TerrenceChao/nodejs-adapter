@@ -17,16 +17,16 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
-      - run: mkdir -p nodejs-adapter
+      # - run: mkdir -p nodejs-adapter
       # - run: echo "Trying Out Workspaces" > nodejs-adapter/logging
       # - persist_to_workspace:
       #     root: nodejs-adapter
       #     paths:
       #       - logging
 
-      - run: pwd
-      - run: ls -l ~
-      - run: ls -l
+      # - run: pwd
+      # - run: ls -l ~
+      # - run: ls -l
 
       # Download and cache dependencies
       # - restore_cache:
@@ -36,7 +36,6 @@ jobs:
       #       - v1-dependencies-
 
       - run: pwd
-      - run: echo 'export NODE_ENV="development"' >> $BASH_ENV
       - run: sudo npm install
 
       # - save_cache:
