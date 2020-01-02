@@ -67,7 +67,7 @@ jobs:
       # - run: ls -l
       - run:
           name: Run test
-          command: npm run test
+          command: sudo npm run test
     
 workflows:
   version: 2
