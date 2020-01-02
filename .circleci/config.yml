@@ -33,6 +33,7 @@ jobs:
             - v1-dependencies-
 
       - run: pwd
+      - run: echo 'export NODE_ENV="dev"' >> $BASH_ENV
       - run: sudo npm install
       - run: sudo npm install mocha --save-dev
 
