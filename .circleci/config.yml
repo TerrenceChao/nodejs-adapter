@@ -43,10 +43,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
   test:
-    machine:
+    docker:
       # specify the version you desire here
-      node: 
-        version: 10.16.3
+      - image: circleci/node:10.16.3
+      
     override:
       - ./node_modules/.bin/mocha
     steps:
