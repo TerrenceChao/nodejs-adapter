@@ -20,7 +20,9 @@ jobs:
           root: nodejs-adapter
           paths:
             - logging
-      - run: sudo apt install tree | tree ~/repo
+            
+      - run: pwd
+      - run: ls -l ~
       # # Download and cache dependencies
       # - restore_cache:
       #     keys:
