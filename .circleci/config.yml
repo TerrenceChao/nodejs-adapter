@@ -70,7 +70,9 @@ jobs:
       # - run: ls -l
       - run:
           name: Run test
-          command: sudo npm run test
+          command: |
+            which mocha &&
+            sudo npm run test
     
 workflows:
   version: 2
