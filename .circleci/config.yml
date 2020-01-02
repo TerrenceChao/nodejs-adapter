@@ -12,7 +12,7 @@ jobs:
     working_directory: ~/repo
 
     environment:
-          NODE_ENV: dev
+          NODE_ENV: development
 
     steps:
       - checkout
@@ -36,7 +36,7 @@ jobs:
       #       - v1-dependencies-
 
       - run: pwd
-      - run: echo 'export NODE_ENV="dev"' >> $BASH_ENV
+      - run: echo 'export NODE_ENV="development"' >> $BASH_ENV
       - run: sudo npm install
 
       # - save_cache:
