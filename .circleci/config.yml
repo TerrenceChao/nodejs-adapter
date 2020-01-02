@@ -46,7 +46,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.3
-      
+
     override:
       - ./node_modules/.bin/mocha
     steps:
@@ -68,11 +68,10 @@ jobs:
             echo ${THIRD_VAR}
       # - run: pwd
       # - run: ls -l
+      - run: which mocha
       - run:
           name: Run test
-          command: |
-            which mocha &&
-            sudo npm run test
+          command: sudo npm run test
     
 workflows:
   version: 2
