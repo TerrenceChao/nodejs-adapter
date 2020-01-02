@@ -20,9 +20,10 @@ jobs:
           root: nodejs-adapter
           paths:
             - logging
-            
+
       - run: pwd
       - run: ls -l ~
+      - run: ls -l
       # # Download and cache dependencies
       # - restore_cache:
       #     keys:
@@ -51,6 +52,7 @@ jobs:
       - run: |
           if [[ $(cat nodejs-adapter/logging) == "Trying Out Workspaces" ]]; then
             echo "It worked!";
+            cat logging;
           else
             echo "Nope!"; exit 1
           fi
