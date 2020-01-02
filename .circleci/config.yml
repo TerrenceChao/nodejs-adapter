@@ -33,7 +33,7 @@ jobs:
             - v1-dependencies-
 
       - run: pwd
-      - run: sudo npm install -g
+      - run: sudo npm install
       - run: sudo npm install mocha --save
 
       - save_cache:
