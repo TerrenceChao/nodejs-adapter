@@ -15,11 +15,11 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p nodejs-adapter
-      - run: echo "Trying Out Workspaces" > nodejs-adapter/logging
-      - persist_to_workspace:
-          root: nodejs-adapter
-          paths:
-            - logging
+      # - run: echo "Trying Out Workspaces" > nodejs-adapter/logging
+      # - persist_to_workspace:
+      #     root: nodejs-adapter
+      #     paths:
+      #       - logging
 
       - run: pwd
       - run: ls -l ~
@@ -48,14 +48,14 @@ jobs:
     steps:
       - checkout
       - run: echo "A second hello"
-      - attach_workspace:
-          at: nodejs-adapter
-      - run: |
-          if [[ $(cat nodejs-adapter/logging) == "Trying Out Workspaces" ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+      # - attach_workspace:
+      #     at: nodejs-adapter
+      # - run: |
+      #     if [[ $(cat nodejs-adapter/logging) == "Trying Out Workspaces" ]]; then
+      #       echo "It worked!";
+      #     else
+      #       echo "Nope!"; exit 1
+      #     fi
       - run:
           name: Run Env Variables
           command: |
@@ -64,9 +64,9 @@ jobs:
             echo ${THIRD_VAR}
       # - run: pwd
       # - run: ls -l
-      # - run:
-      #     name: Run test
-      #     command: npm run test
+      - run:
+          name: Run test
+          command: npm run test
     
 workflows:
   version: 2
