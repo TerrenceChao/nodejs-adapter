@@ -11,8 +11,6 @@ jobs:
 
     working_directory: ~/repo
 
-    environment:
-          NODE_ENV: dev
 
     steps:
       - checkout
@@ -49,6 +47,9 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:10.16.3
 
+    environment:
+          NODE_ENV: dev
+          
     steps:
       - checkout
       - run: echo "A second hello"
