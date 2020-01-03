@@ -21,7 +21,7 @@ jobs:
           command: |
             echo 'export NODE_ENV="development"' >> $BASH_ENV
 
-            
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -30,7 +30,7 @@ jobs:
             - v1-dependencies-
 
       - run: pwd
-      - run: sudo npm install
+      - run: sudo npm install --save-dev
 
       - save_cache:
           paths:
