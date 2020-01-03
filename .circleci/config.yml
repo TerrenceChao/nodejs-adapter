@@ -36,12 +36,12 @@ jobs:
 
       - run: pwd
       - run: sudo npm install -g
-      - run: sudo npm mocha -g
-      - run: sudo npm chai -g
-      - run: sudo npm socket.io-redis -g
-      - run: sudo npm socket.io-client -g
-      - run: sudo npm socket.io-adapter -g
-      - run: sudo npm socket.io -g
+      - run: sudo npm install mocha -g
+      - run: sudo npm install chai -g
+      - run: sudo npm install socket.io-redis -g
+      - run: sudo npm install socket.io-client -g
+      - run: sudo npm install socket.io-adapter -g
+      - run: sudo npm install socket.io -g
 
   test:
     docker:
