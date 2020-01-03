@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:10.16.3
 
-    # working_directory: ~/repo
+    working_directory: ~/repo
 
     environment:
           NODE_ENV: development
@@ -42,6 +42,7 @@ jobs:
       - run: sudo npm install socket.io-client -g
       - run: sudo npm install socket.io-adapter -g
       - run: sudo npm install socket.io -g
+      - run: sudo npm run test
 
   test:
     docker:
