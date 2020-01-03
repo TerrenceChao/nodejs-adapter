@@ -35,7 +35,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: pwd
-      - run: sudo npm install --save-dev
+      - run: sudo npm install -g
+      - run: sudo npm run test
 
   test:
     docker:
