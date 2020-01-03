@@ -42,6 +42,7 @@ jobs:
       - run: sudo npm install socket.io-client -g
       - run: sudo npm install socket.io-adapter -g
       - run: sudo npm install socket.io -g
+      - run: sudo npm install chai --save-dev
       - run: sudo npm run test
 
   test:
