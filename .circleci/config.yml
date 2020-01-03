@@ -35,13 +35,13 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: pwd
-      - run: npm install -g
-      - run: npm mocha -g
-      - run: npm chai -g
-      - run: npm socket.io-redis -g
-      - run: npm socket.io-client -g
-      - run: npm socket.io-adapter -g
-      - run: npm socket.io -g
+      - run: sudo npm install -g
+      - run: sudo npm mocha -g
+      - run: sudo npm chai -g
+      - run: sudo npm socket.io-redis -g
+      - run: sudo npm socket.io-client -g
+      - run: sudo npm socket.io-adapter -g
+      - run: sudo npm socket.io -g
 
   test:
     docker:
