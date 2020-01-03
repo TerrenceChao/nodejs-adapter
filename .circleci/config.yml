@@ -61,9 +61,7 @@ jobs:
             echo ${THIRD_VAR}
       # - run: pwd
       # - run: ls -l
-      - run:
-          name: Run test
-          command: sudo npm run test
+      - run: echo "Done."
     
 workflows:
   version: 2
