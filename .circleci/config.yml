@@ -35,7 +35,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: pwd
-      - run: sudo npm install -g
+      - run: npm install -g
 
   test:
     docker:
@@ -54,7 +54,7 @@ jobs:
       # - run: ls -l
       - run:
           name: Run test
-          command: sudo npm run test
+          command: npm run test
     
 workflows:
   version: 2
