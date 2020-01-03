@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: node:10.16.3
 
-    working_directory: ~/repo
+    # working_directory: ~/repo
 
     environment:
           NODE_ENV: development
